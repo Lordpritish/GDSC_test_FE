@@ -8,7 +8,7 @@ class EventTimeline extends StatelessWidget {
       children: <Widget>[
         TimelineTile(
           alignment: TimelineAlign.manual,
-          lineXY: 0.3,
+          lineXY: 1000000000,
           isFirst: true,
           indicatorStyle: IndicatorStyle(
             width: 70,

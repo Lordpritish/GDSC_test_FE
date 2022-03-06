@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void sendData() {}
 
-  void createAlbum(String title) {
+  void createAlbum(String title) async {
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
       body: jsonEncode(<String, String>{

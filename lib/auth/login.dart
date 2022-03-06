@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
       body: jsonEncode(<String, String>{
-        'email': _email,
+        'email': 'pritishstudies@gmail.com',
         'password': 'pritish@123'
       }),
     );

@@ -88,6 +88,9 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           child: Column(
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+              ),
               Text(
                 "Welcome, please provide the",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

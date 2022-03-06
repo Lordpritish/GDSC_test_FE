@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void sendData() {}
 
-  void createAlbum(String title) async {
+  void createAlbum() async {
     print("It reached createAlbum??");
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
@@ -160,6 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                               print("here?");
                               _formKey.currentState.save();
                               print(_age);
+                              createAlbum();
                               // store the data in firestore
                             },
                             // color: Colors.blue,

@@ -131,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                                 print("Is it coming here?");
                                 return;
                               }
+                              print("here?");
                               _formKey.currentState.save();
                               print(_age);
                               // store the data in firestore

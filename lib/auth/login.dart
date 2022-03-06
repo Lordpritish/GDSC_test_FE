@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
       // print("Aight");
-      // print(response.body);
+      print(response.body);
     } else {
       // If the server did not return a 201 CREATED response,
       // then throw an exception.

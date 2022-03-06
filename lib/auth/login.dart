@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
     print("It reached createAlbum??");
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
-      body: jsonEncode(<String, String>{
+      body: jsonEncode({
         'email': 'pritishstudies@gmail.com',
         'password': 'pritish@123'
       }),

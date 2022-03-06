@@ -29,11 +29,11 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     print("What abt here??");
-
+    print(response.statusCode);
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
-      print("Aight");
+      // print("Aight");
       // print(response.body);
     } else {
       // If the server did not return a 201 CREATED response,

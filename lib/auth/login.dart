@@ -33,12 +33,12 @@ class _LoginPageState extends State<LoginPage> {
     if (response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
-      print("Did we reach here??");
-      print(response.body);
+      print("Aight");
+      // print(response.body);
     } else {
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
-      print(response);
+      // print(response.);
       throw Exception('Failed to create album.');
     }
   }

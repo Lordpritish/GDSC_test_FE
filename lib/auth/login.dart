@@ -152,8 +152,10 @@ class _LoginPageState extends State<LoginPage> {
                       key: _formKey,
                       child: Column(
                         children: <Widget>[
+                          // SizedBox(height: 20),
+                          // _buildNameField(),
                           SizedBox(height: 20),
-                          _buildNameField(),
+                          _buildEmailField(),
                           SizedBox(height: 20),
                           _buildPasswordField(),
                           // SizedBox(height: 20),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:http/http.dart' as http;
+import '../home.dart';
 import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
@@ -20,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
   void sendData() {}
 
   void createAlbum() async {
-    print("It reached createAlbum??");
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
       body: {
@@ -29,10 +29,13 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    print("What abt here??");
-    print(response.statusCode);
     if (response.statusCode == 200) {
       print(response.body);
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
     } else {
       throw Exception('Failed to create album.');
     }
@@ -171,12 +174,10 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(fontSize: 16.0),
                             ),
                             onPressed: () async {
-                              print("bruhh");
                               // if (!_formKey.currentState.validate()) {
                               //   print("Is it coming here?");
                               //   return;
                               // }
-                              print("here?");
                               _formKey.currentState.save();
                               print(_email);
                               print(_password);

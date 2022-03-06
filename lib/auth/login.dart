@@ -178,7 +178,8 @@ class _LoginPageState extends State<LoginPage> {
                               // }
                               print("here?");
                               _formKey.currentState.save();
-                              print(_age);
+                              print(_email);
+                              print(_password);
                               createAlbum();
                               // store the data in firestore
                             },

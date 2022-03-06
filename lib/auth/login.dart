@@ -68,8 +68,6 @@ class _LoginPageState extends State<LoginPage> {
         _password = value;
       },
       obscureText: true,
-      enableSuggestions: false,
-      autocorrect: false,
     );
   }
 

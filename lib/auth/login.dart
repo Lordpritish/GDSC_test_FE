@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                                 return;
                               }
                               _formKey.currentState.save();
-                              // print(_age);
+                              print(_age);
                               // store the data in firestore
                             },
                             // color: Colors.blue,

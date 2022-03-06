@@ -88,15 +88,6 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           child: Column(
             children: <Widget>[
-              // LifeShareScreen(),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Image(
-                  image: AssetImage('logo.png'),
-                  height: 100,
-                  colorBlendMode: BlendMode.lighten,
-                ),
-              ),
               Text(
                 "Welcome, please provide the",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

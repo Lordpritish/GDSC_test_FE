@@ -128,6 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () async {
                               print("bruhh");
                               if (!_formKey.currentState.validate()) {
+                                print("Is it coming here?");
                                 return;
                               }
                               _formKey.currentState.save();

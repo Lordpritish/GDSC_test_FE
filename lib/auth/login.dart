@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   String _age;
   String _email;
   String _bloodgrp;
+  String _password;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void sendData() {}
@@ -23,22 +24,16 @@ class _LoginPageState extends State<LoginPage> {
     final response = await http.post(
       Uri.parse('http://localhost:3000/api/auth/login'),
       body: {
-        'email': 'pritishstudies@gmail.com',
-        'password': 'pritish@123'
+        'email': _email,
+        'password': _password
       },
     );
 
     print("What abt here??");
     print(response.statusCode);
     if (response.statusCode == 200) {
-      // If the server did return a 201 CREATED response,
-      // then parse the JSON.
-      // print("Aight");
       print(response.body);
     } else {
-      // If the server did not return a 201 CREATED response,
-      // then throw an exception.
-      // print(response.);
       throw Exception('Failed to create album.');
     }
   }
@@ -56,6 +51,25 @@ class _LoginPageState extends State<LoginPage> {
       onSaved: (String value) {
         _name = value;
       },
+    );
+  }
+
+  Widget _buildPasswordField() {
+    return TextFormField(
+      keyboardType: TextInputType.name,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Name can't be empty";
+        }
+        return null;
+      },
+      decoration: InputDecoration(labelText: "Password"),
+      onSaved: (String value) {
+        _password = value;
+      },
+      obscureText: true,
+      enableSuggestions: false,
+      autocorrect: false,
     );
   }
 
@@ -141,12 +155,14 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(height: 20),
                           _buildNameField(),
                           SizedBox(height: 20),
-                          _buildAgeField(),
-                          SizedBox(height: 20),
-                          _buildEmailField(),
-                          SizedBox(height: 20),
-                          _buildBloodGrpField(),
-                          SizedBox(height: 30),
+                          _buildPasswordField(),
+                          // SizedBox(height: 20),
+                          // _buildAgeField(),
+                          // SizedBox(height: 20),
+                          // _buildEmailField(),
+                          // SizedBox(height: 20),
+                          // _buildBloodGrpField(),
+                          // SizedBox(height: 30),
                           RaisedButton(
                             color: Colors.blue,
                             padding: EdgeInsets.fromLTRB(30, 15, 30, 15),

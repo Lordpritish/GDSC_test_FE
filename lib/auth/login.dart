@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,6 +15,29 @@ class _LoginPageState extends State<LoginPage> {
   String _email;
   String _bloodgrp;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  void sendData() {}
+
+  void createAlbum(String title) {
+    final response = await http.post(
+      Uri.parse('http://localhost:3000/api/auth/login'),
+      body: jsonEncode(<String, String>{
+        'email': _email,
+        'password': 'pritish@123'
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      // If the server did return a 201 CREATED response,
+      // then parse the JSON.
+      print("Did we reach here??");
+      print(response.body);
+    } else {
+      // If the server did not return a 201 CREATED response,
+      // then throw an exception.
+      throw Exception('Failed to create album.');
+    }
+  }
 
   Widget _buildNameField() {
     return TextFormField(
